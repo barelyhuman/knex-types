@@ -2,6 +2,15 @@
   "name": "@barelyhuman/knex-types",
   "version": "0.0.1",
   "description": "Typescript types from knex schema",
+  "keywords": [
+    "knex",
+    "types",
+    "typescript",
+    "generator"
+  ],
+  "repository": "git@github.com:barelyhuman/knex-types",
+  "license": "MIT",
+  "author": "reaper <ahoy@barelyhuman.dev>",
   "type": "module",
   "exports": {
     ".": {
@@ -9,15 +18,19 @@
       "require": "./dist/index.cjs"
     }
   },
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "files": [
     "src",
     "dist"
   ],
   "scripts": {
     "build": "rollup -c",
-    "test": "uvu --ignore=/snapshots/",
     "fix": "prettier --write .",
-    "next": "bumpp"
+    "next": "bumpp",
+    "test": "uvu --ignore=/snapshots/"
   },
   "dependencies": {
     "knex-schema-inspector": "^3.1.0"
@@ -32,11 +45,11 @@
     "sqlite3": "^5.1.7",
     "uvu": "^0.5.6"
   },
-  "engines": {
-    "node": ">=12"
-  },
   "peerDependencies": {
     "knex": ">=2.3"
+  },
+  "engines": {
+    "node": ">=12"
   },
   "publishConfig": {
     "access": "public"
