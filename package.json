@@ -14,20 +14,22 @@
   "type": "module",
   "exports": {
     ".": {
+      "types": "./types/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     }
   },
-  "main": "index.js",
   "directories": {
     "test": "test"
   },
   "files": [
     "src",
-    "dist"
+    "dist",
+    "types"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "types": "tsc",
+    "build": "rollup -c; npm run types",
     "fix": "prettier --write .",
     "next": "bumpp",
     "test": "uvu --ignore=/snapshots/",
@@ -44,6 +46,7 @@
     "prettier": "^3.2.5",
     "rollup": "^4.13.0",
     "sqlite3": "^5.1.7",
+    "typescript": "^5.4.3",
     "uvu": "^0.5.6"
   },
   "peerDependencies": {
