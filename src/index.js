@@ -77,6 +77,7 @@ export async function generateTypes(knexConnection, { output } = {}) {
         case "date":
         case "datetime": {
           columnConstruct.push(":Date");
+          break;
         }
       }
       const typeInfo = columnConstruct.concat(";", "\n").join("");
