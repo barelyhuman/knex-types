@@ -72,6 +72,7 @@ export async function generateTypes(knexConnection, { output } = {}) {
           columnConstruct.push(":number");
           break;
         }
+        case "timestamp with time zone":
         case "timestamp without time zone":
         case "datetime2":
         case "date":
