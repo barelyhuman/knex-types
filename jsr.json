@@ -1,0 +1,5 @@
+{
+  "name": "@barelyhuman/knex-types",
+  "version": "0.0.1",
+  "exports": "./src/index.js"
+}
