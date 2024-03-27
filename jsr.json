@@ -1,6 +1,6 @@
 {
   "name": "@barelyhuman/knex-types",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "exports": "./src/index.js",
   "description": "Generate Model types from Knex"
 }
