@@ -12,4 +12,8 @@ export type UserRel = {
     something_big?:number;
     something_boolean?:boolean;
     something_long?:string;
+    something_double?:number;
+    something_float?:number;
+    something_decimal?:number;
+    some_json?:JSON;
 }

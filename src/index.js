@@ -58,16 +58,30 @@ export async function generateTypes(knexConnection, { output } = {}) {
         case "character":
         case "char":
         case "nvarchar":
+        case "longtext":
+        case "mediumtext":
         case "text": {
           columnConstruct.push(":string");
           break;
         }
+        case "bit":
         case "boolean": {
           columnConstruct.push(":boolean");
           break;
         }
+        case "json": {
+          columnConstruct.push(":JSON");
+          break;
+        }
+        case "float":
+        case "double precision":
+        case "real":
+        case "mediumint":
+        case "smallint":
         case "int":
         case "bigint":
+        case "tinyint":
+        case "varbinary":
         case "integer": {
           columnConstruct.push(":number");
           break;
@@ -76,9 +90,14 @@ export async function generateTypes(knexConnection, { output } = {}) {
         case "timestamp without time zone":
         case "datetime2":
         case "date":
+        case "datetimeoffset":
+        case "time":
         case "datetime": {
           columnConstruct.push(":Date");
           break;
+        }
+        default: {
+          columnConstruct.push(":unknown");
         }
       }
       const typeInfo = columnConstruct.concat(";", "\n").join("");
@@ -88,6 +107,7 @@ export async function generateTypes(knexConnection, { output } = {}) {
     outputWriter.write(`}\n`);
   });
 
+  outputWriter.emit("drain");
   outputWriter.end();
 }
 

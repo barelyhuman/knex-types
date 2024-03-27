@@ -31,6 +31,10 @@ test.before(async () => {
     table.bigInteger("something_big");
     table.boolean("something_boolean");
     table.string("something_long");
+    table.double("something_double");
+    table.float("something_float");
+    table.decimal("something_decimal");
+    table.json("some_json");
   });
 });
 
@@ -38,8 +42,14 @@ test("basic", async () => {
   await generateTypes(knexInstance, {
     output: "./test/snapshots/types.d.ts",
   });
+
+  const result = await fs.promises.readFile(
+    "./test/snapshots/types.d.ts",
+    "utf8"
+  );
+
   asserts.snapshot(
-    await fs.promises.readFile("./test/snapshots/types.d.ts", "utf8"),
+    result,
     `// GENERATED CODE, DO NOT MODIFY AS IT WILL BE REPLACED ON NEXT GENERATION
 export type Users = {
     id:number;
@@ -54,6 +64,10 @@ export type UserRel = {
     something_big?:number;
     something_boolean?:boolean;
     something_long?:string;
+    something_double?:number;
+    something_float?:number;
+    something_decimal?:number;
+    some_json?:JSON;
 }
 `
   );
