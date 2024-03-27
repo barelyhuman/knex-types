@@ -1,7 +1,7 @@
 {
   "name": "@barelyhuman/knex-types",
   "version": "0.0.4",
-  "description": "Typescript types from knex schema",
+  "description": "Generate Model types from Knex",
   "keywords": [
     "knex",
     "types",

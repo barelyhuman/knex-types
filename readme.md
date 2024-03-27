@@ -1,6 +1,6 @@
 # @barelyhuman/knex-types
 
-> Generate Schema types from Knex
+> Generate Model types from Knex
 
 - [@barelyhuman/knex-types](#barelyhumanknex-types)
   - [Schema Support](#schema-support)
