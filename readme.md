@@ -9,6 +9,8 @@
 
 ## Schema Support
 
+While the below checklist mentions **Partial**, most of what the library can generate should be usable. It says partial because things like `enum` and other constraints that can be used to generate better types and models for knex are still not done.
+
 - [x] Sqlite
 - [ ] Postgres (Partial)
 - [ ] MSSQL (Partial)
