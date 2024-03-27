@@ -14,7 +14,10 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./types/index.d.ts",
+      "types": {
+        "import": "./dist/index.d.mts",
+        "require": "./dist/index.d.cts"
+      },
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     }
@@ -28,8 +31,7 @@
     "types"
   ],
   "scripts": {
-    "types": "tsc",
-    "build": "rollup -c; npm run types",
+    "build": "rollup -c",
     "fix": "prettier --write .",
     "next": "bumpp",
     "test": "uvu --ignore=/snapshots/",
@@ -45,6 +47,7 @@
     "knex": "^3.1.0",
     "prettier": "^3.2.5",
     "rollup": "^4.13.0",
+    "rollup-plugin-ts": "^3.4.5",
     "sqlite3": "^5.1.7",
     "typescript": "^5.4.3",
     "uvu": "^0.5.6"

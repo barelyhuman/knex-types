@@ -1,9 +1,12 @@
+import ts from "rollup-plugin-ts";
+
 /**
  * @type {import("rollup").RollupOptions[]}
  */
 export default [
   {
     input: "./src/index.js",
+    plugins: [ts()],
     output: {
       sourcemap: true,
       dir: "dist",
@@ -13,6 +16,7 @@ export default [
   },
   {
     input: "./src/index.js",
+    plugins: [ts()],
     output: {
       sourcemap: true,
       dir: "dist",
