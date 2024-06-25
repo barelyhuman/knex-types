@@ -20,7 +20,7 @@ While the below checklist mentions **Partial**, most of what the library can gen
 
 ```js
 // in CJS
-import { generateTypes } from "@barelyhuman/knex-types";
+const { generateTypes } = require("@barelyhuman/knex-types");
 const knexInstance = knex(config);
 
 generateTypes(knexInstance, {
